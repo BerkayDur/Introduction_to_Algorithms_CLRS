@@ -5,8 +5,7 @@ def insertion_sort(input_list: list) -> list:
   Sorts the input_list using the insertion sort method - which sorts the list in-place
   
   """
-  for i in range(1, len(input_list)):
-    key = input_list[i]
+  for i, key in enumerate(input_list[1:], 1):
     j = i-1
     while j >= 0 and input_list[j] > key:
       input_list[j+1] = input_list[j]
@@ -15,4 +14,5 @@ def insertion_sort(input_list: list) -> list:
   return input_list
 
 if __name__ == "__main__":
-  print(insertion_sort([5, -2, -1234, 45, -1]))
+  
+  print(insertion_sort([-23,6345,2234,-232,90, 324]))
