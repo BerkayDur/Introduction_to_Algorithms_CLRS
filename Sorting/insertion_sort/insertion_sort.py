@@ -1,15 +1,15 @@
 """Source code for insertion sourt algorithm: Chapter 2.1"""
 
 ## Helper(s)
-def greater_than(a, b):
+def greater_than(a: int | float, b: int | float) -> bool:
   """Functional way of computing greater than"""
   return a > b
 
-def less_than(a, b):
+def less_than(a: int | float, b: int | float) -> bool:
   """Functional way of computing less than"""
   return a < b
 
-def insertion_sort(input_list: list, *, ascending: bool = True) -> list:
+def insertion_sort(input_list: list[int | float], *, ascending: bool = True) -> list[int | float]:
   """
   Sorts the input_list using the insertion sort method - which sorts the list in-place
   """
