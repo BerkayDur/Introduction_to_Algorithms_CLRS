@@ -9,8 +9,9 @@ def less_than(a: int | float, b: int | float) -> bool:
   """Functional way of computing less than"""
   return a < b
 
-def merge(array_to_sort: list[int], p: int, q: int, r:int, *, ascending: bool):
-  '''Merge procedure combines 2 sorted subarrays within A'''
+def merge(array_to_sort: list[int | float],
+  p: int, q: int, r:int, *, ascending: bool) -> list[int | float]:
+  '''Merge procedure combines 2 sorted subarrays within array_to_sort'''
 
   compare_function = greater_than if ascending else less_than
 
@@ -36,7 +37,6 @@ def merge(array_to_sort: list[int], p: int, q: int, r:int, *, ascending: bool):
     array_to_sort[k] = left_array[i]
     i += 1
     k += 1
-
   while j < len_r:
     array_to_sort[k] = right_array[j]
     j += 1
@@ -44,9 +44,9 @@ def merge(array_to_sort: list[int], p: int, q: int, r:int, *, ascending: bool):
 
   return array_to_sort
 
-def merge_sort(array_to_sort: list[int],
+def merge_sort(array_to_sort: list[int | float],
   start_index: int = None, final_index: int = None, *,
-  ascending: bool = True):
+  ascending: bool = True) -> list[int | float]:
   '''Sorts A in-place (and return it) using the merge-sort procedure'''
   if start_index is None:
     start_index = 0
